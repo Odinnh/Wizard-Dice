@@ -91,9 +91,11 @@ function setPredictionToNumber(elem, value = '') {
     elem.setAttribute('data-state', state)
     elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${elem.getAttribute('data-index') == '8' ? '486.5 486.5' : '300 512'}">${content[value]}</svg>`
     setTotal()
+    
 }
 function setTotal() {
     let total = 0
+    document.querySelectorAll('[data-state="collected"]')?.length >= 9? total = 3: total = 0;
     document.querySelectorAll('[data-value]').forEach(item => {
         total += parseInt(item.getAttribute('data-value'))
     })
