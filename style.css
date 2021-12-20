@@ -7,7 +7,7 @@
 
     --blue-500:#3450f0;
     --green-500:#25b62c;
-    --yellow-500:#f0e334;
+    --yellow-500:#d7d237;
     --red-500:#f03434;
     --gap:5px;
 }
@@ -106,20 +106,42 @@ svg.orbs .checked{fill:var(--green-500);}
 .grid button{
     /* --color:initial; */
     height:100%;
+    width: 10vw;
+    max-width: 80px;
     aspect-ratio: 1;
     border-style: inset;
-    border:10px solid var(--color);
-    border-radius:20px;
+    color:var(--color);
+    border:min(10px, 1.5vw) solid var(--color);
+    border-radius:min(20px, 3vw);
+    stroke:var(--color);
+    fill:none;
+    stroke-width:16%;
+    stroke-linecap:round;
+    stroke-miterlimit:1;
+    stroke-linejoin:round;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.grid button > svg{
+    height:90%;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--grey-500);
     opacity: 1; /* Firefox */
-  }
+}
   
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--grey-500);
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--grey-500);
-  }
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+color: var(--grey-500);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+color: var(--grey-500);
+}
+button[data-state="selected"], 
+button[data-state="collected"],
+button[data-state="number"]{
+    border-style: double;
+}
