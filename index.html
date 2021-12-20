@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=600, initial-scale=1.0">
+    <title>Wizard Dice</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+    <main>
+        <aside>
+            <section class="name">
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512" class="name">
+                    <path
+                        d="M71.46 287.61c-4.85 41.95-7.25 84.14-7.38 126.37L7.03 471.03c-9.37 9.37-9.37 24.57 0 33.94 9.37 9.37 24.57 9.37 33.94 0l57.05-57.05c42.23-.12 84.42-2.53 126.37-7.38C473.8 415.14 508.44 51.72 512 0 460.28 3.56 96.87 38.2 71.46 287.61zm147.42 105.25c-23.41 2.71-47.3 4.36-71.31 5.51L193.94 352h125.37c-27.89 21.72-60.89 36.83-100.43 40.86zM352.81 320H225.94l64-64h106.12c-12.11 23.11-26.54 44.76-43.25 64zm-30.87-96l13.54-13.54c9.37-9.37 9.37-24.57 0-33.94-9.37-9.37-24.57-9.37-33.94 0l-187.9 187.9c1.16-24.09 2.83-48.13 5.58-71.96C136.33 124.4 349.77 70.87 457.48 54.51c-6.89 45.3-20.53 109.25-46.37 169.49h-89.17z">
+                    </path>
+                </svg>
+            </section>
+
+            <section class="jokers">
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 512" class="grey">
+                    <path
+                        d="M627 178.3c-1.5-13.2-7.4-25.9-17.4-35.9-9.7-9.7-22.2-15.8-35.8-17.3-10.5-8.3-23.6-13.1-37.8-13.1s-27.3 4.8-37.8 13.1c-.1 0-.2.1-.4.1C426.3 59 379.8 32 305.4 32h-.2c-72.8.1-138.4 45-167.4 114.4L58.8 336H32c-17.7 0-32 16.1-32 36v72c0 19.9 14.3 36 32 36h448c17.7 0 32-16.1 32-36v-72c0-19.9-14.3-36-32-36h-29.6l-62.8-112.8 51.8 20.3c1.8 3.5 3.2 7.1 5.6 10.2 1.5 13.2 7.4 25.9 17.4 35.9 9.8 9.8 22.4 15.9 36 17.5 10.4 8.2 23.5 12.9 37.5 12.9s27.1-4.7 37.5-12.9c13.6-1.6 26.2-7.7 36-17.5 10-10 15.9-22.6 17.4-35.8 8.3-10.4 13-23.6 13-37.7s-4.6-27.3-12.8-37.8zM464 384v48H48v-48h416zM335.4 227.9L395.5 336H110.8l71.3-171.2C203.5 113.3 251.8 80 305.2 80h.1c54.4 0 89.5 17.1 150.3 72-5.5 8.1-9.6 16.9-10.7 26.4-3.1 3.9-5.1 8.5-7.2 13l-52.5-20.6c-4.8-1.9-9.8-2.8-14.8-2.8-14.2 0-27.5 7.7-34.8 20-7.1 12.3-7.3 27.3-.2 39.9zm246.9.6l-9.5 2.8 4.7 8.7c2.9 5.3 2.1 11.6-2 15.6-2.5 2.5-5.9 3.9-9.4 3.9-1.8 0-3.8-.6-6.2-1.9l-8.7-4.7-2.8 9.5c-1.7 5.8-6.7 9.7-12.5 9.7s-10.8-3.9-12.5-9.7l-2.8-9.5-8.7 4.7c-2.4 1.3-4.4 1.9-6.2 1.9-3.6 0-6.9-1.4-9.4-3.9-4.1-4.1-4.9-10.3-2-15.6l4.7-8.7-9.5-2.8c-5.8-1.7-9.7-6.7-9.7-12.5s3.9-10.8 9.7-12.5l9.5-2.8-4.7-8.7c-2.9-5.3-2.1-11.6 2-15.6 2.4-2.4 5.6-3.7 9-3.7 2.3 0 4.6.6 6.7 1.7l8.7 4.7 2.8-9.5c1.7-5.8 6.7-9.7 12.5-9.7s10.8 3.9 12.5 9.7l2.8 9.5 8.7-4.7c2.1-1.1 4.4-1.7 6.7-1.7 3.4 0 6.6 1.3 9 3.7 4.1 4.1 4.9 10.3 2 15.6l-4.7 8.7 9.5 2.8c5.8 1.7 9.7 6.7 9.7 12.5s-4.1 10.8-9.9 12.5z">
+                    </path>
+                </svg>
+            </section>
+
+            <section onload="start()" class="multipliers">
+                <svg class="orbs" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <circle class="nine" id="check-1" cx="63.5" cy="127.67" r="43.5" />
+                    <circle class="nine" id="check-2" cx="191.83" cy="127.67" r="43.5" />
+                    <circle class="nine" id="check-3" cx="320.17" cy="127.67" r="43.5" />
+                    <circle class="nine" id="check-4" cx="63.5" cy="256" r="43.5" />
+                    <circle class="nine" id="check-5" cx="191.5" cy="256" r="43.5" />
+                    <circle class="nine" id="check-6" cx="319.5" cy="256" r="43.5" />
+                    <circle class="nine" id="check-7" cx="63.5" cy="384.33" r="43.5" />
+                    <circle class="nine" id="check-8" cx="191.5" cy="384.33" r="43.5" />
+                    <circle class="nine" id="check-9" cx="319.5" cy="384.33" r="43.5" />
+                    <circle class="twelve" id="check-10" cx="448.5" cy="127.67" r="43.5" />
+                    <circle class="twelve" id="check-11" cx="447.5" cy="256" r="43.5" />
+                    <circle class="twelve" id="check-12" cx="447.5" cy="384.33" r="43.5" />
+                </svg>
+            </section>
+
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="blue">
+                <path
+                    d="M344 96H216V16c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v80H40c-22.09 0-40 17.91-40 40s17.91 40 40 40c19.25 0 34.57-13.88 38.38-32H112v264.05l63.36 95.04c3.96 5.94 10.3 8.91 16.64 8.91s12.68-2.97 16.64-8.91L272 408.05V144h33.62c3.81 18.12 19.13 32 38.38 32 22.09 0 40-17.91 40-40s-17.91-40-40-40zM224 393.52l-32 48-32-48V144h64v249.52z">
+                </path>
+            </svg>
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="green">
+                <path
+                    d="M145.78 286.65l33.94-33.9-99.54-99.42c33.83-24.46 74.26-37.85 116.85-37.85 34.01 0 66.7 8.5 95.73 24.37l34.96-34.91c-38.88-24.21-83.72-37.4-130.69-37.4-55.44 0-107.96 18.26-151.12 51.56l-7.28-7.27c-6.25-6.24-16.38-6.24-22.63 0l-11.31 11.3c-6.25 6.24-6.25 16.36 0 22.6l141.09 140.92zM493.2.3L364.62 25.98c-12.29 2.45-16.88 17.6-8.02 26.45l34.47 34.42-250.63 250.33-49.7-16.55c-1.93-.64-12.39-3.68-21.03 4.96l-63.68 63.6c-10.8 10.79-6.46 29.17 8.04 33.99l55.65 18.53 18.55 55.58c2.99 8.97 11.19 14.05 19.57 14.05 5.14 0 10.36-1.92 14.47-6.02l63.67-63.59a20.51 20.51 0 0 0 4.97-21.01l-16.57-49.64L425 120.75l34.46 34.42c8.92 8.91 24.04 4.2 26.48-8.01l25.72-128.43C514.02 7 503.46-1.74 493.2.3zM116.27 454.85l-14.93-44.72-44.78-14.91 32.92-32.88 44.78 14.91 14.93 44.72-32.92 32.88zM455.64 94.86L417 56.26l48.3-9.65-9.66 48.25zm-48.57 89l-34.96 34.91c16.19 29.21 24.9 62.14 24.9 96.45 0 42.53-13.42 82.9-37.91 116.69L258.9 331.83l-33.94 33.9 141.75 141.58c6.25 6.24 16.38 6.24 22.62 0l11.31-11.3c6.25-6.24 6.25-16.36 0-22.6l-7.28-7.27c33.35-43.1 51.64-95.55 51.64-150.92.01-47.23-13.36-92.33-37.93-131.36z">
+                </path>
+            </svg>
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="yellow">
+                <path
+                    d="M304 176c-17.67 0-32 14.33-32 32s14.33 32 32 32 32-14.33 32-32-14.33-32-32-32zm196.98 18.97l-56.5-17.91c-12.21-55.61-56.4-99.15-112.42-110.23L313.05 10.8c-4.92-14.5-17.46-14.37-22.08.22l-17.91 56.5c-55.61 12.21-99.15 56.4-110.23 112.42l-56.03 19.01c-14.5 4.92-14.37 17.46.22 22.08l56.5 17.91c4.21 19.18 12.29 36.81 23.31 52.29L3.51 474.54c-4.69 4.69-4.69 12.29 0 16.97l16.97 16.97c4.69 4.69 12.29 4.69 16.97 0l183.32-183.32c16.26 11.57 34.87 19.99 55.16 24l19.01 56.03c4.92 14.5 17.46 14.37 22.08-.22l17.91-56.5c55.61-12.21 99.15-56.4 110.23-112.42l56.03-19.01c14.51-4.91 14.38-17.45-.21-22.07zM304 304c-52.94 0-96-43.07-96-96 0-52.94 43.06-96 96-96s96 43.06 96 96c0 52.93-43.06 96-96 96z">
+                </path>
+            </svg>
+            <svg aria-hidden="true" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="red">
+                <path
+                    d="M512 176.38c-3.73-68.04-31.19-128.82-73.55-171.67-3.19-3.23-7.04-4.7-10.83-4.7-7.08 0-13.96 5.14-16.01 13.66-4.69 19.52-30.54 106.3-131.61 106.3V80c0-8.84-7.16-16-16-16h-16c-8.84 0-16 7.16-16 16v39.96c-100.01 0-126.17-86.81-130.85-106.3C99.1 5.15 92.21 0 85.13 0c-3.79 0-7.64 1.48-10.83 4.7C28.71 50.83 0 117.62 0 192c0 74.38 28.71 141.17 74.31 187.3 3.19 3.22 7.04 4.7 10.83 4.7 7.08 0 13.96-5.14 16.01-13.66 4.69-19.5 30.84-106.3 130.85-106.3V496c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16V264.03c101.07 0 126.91 86.78 131.61 106.3 2.05 8.52 8.93 13.66 16.01 13.66 3.79 0 7.64-1.48 10.83-4.7 42.36-42.85 69.82-103.63 73.55-171.67L496.73 192 512 176.38zM76.88 303.53C58.27 270.65 48.07 231.96 48.07 192c0-39.97 10.2-78.65 28.81-111.53 31.76 53.46 84.2 87.5 155.12 87.5v48.07c-70.69-.01-123.23 33.82-155.12 87.49zm385.16-78.3c-3.96 28.21-12.87 54.77-26.17 78.31-31.48-53.01-83.46-87.51-155.87-87.51v-48.07c71.15 0 123.69-33.33 155.87-87.5 13.29 23.54 22.21 50.1 26.17 78.31L429.56 192l32.48 33.23z">
+                </path>
+            </svg>
+
+
+            <section class="score"></section>
+        </aside>
+        <div id="container">
+            <section class="name">
+                <input type="text" placeholder="Edalf The Grey">
+            </section>
+
+            <section class="jokers"></section>
+
+            <section class="multipliers">
+
+                <h2>1x</h2>
+                <h2>2x</h2>
+                <h2>3x</h2>
+                <h2>4x</h2>
+                <h2>5x</h2>
+            </section>
+
+            <section class="grid blue">
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+            </section>
+            <section class="grid green">
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+            </section>
+            <section class="grid yellow">
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+            </section>
+            <section class="grid red">
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+                <button data-state="0" onclick="changeState(this)"></button>
+            </section>
+
+            <section class="score"></section>
+        </div>
+    </main>
+</body>
+
+</html>
