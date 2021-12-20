@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=600, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+
     <title>Wizard Dice</title>
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css">
@@ -66,7 +67,9 @@
             </svg>
 
 
-            <section class="score"></section>
+            <section class="score">
+                <h2>0</h2>
+            </section>
         </aside>
         <div id="container">
             <section class="name">
@@ -74,11 +77,11 @@
             </section>
 
             <section class="jokers">
-                <button data-state="" data-index="0" onclick="setJoker(this)"></button>
-                <button data-state="" data-index="0" onclick="setJoker(this)"></button>
-                <button data-state="" data-index="0" onclick="setJoker(this)"></button>
-                <button data-state="" data-index="0" onclick="setJoker(this)"></button>
-                <button data-state="" data-index="0" onclick="setJoker(this)"></button>
+                <button class="btn" data-state="" data-index="0" onclick="setJoker(this)"></button>
+                <button class="btn" data-state="" data-index="0" onclick="setJoker(this)"></button>
+                <button class="btn" data-state="" data-index="0" onclick="setJoker(this)"></button>
+                <button class="btn" data-state="" data-index="0" onclick="setJoker(this)"></button>
+                <button class="btn" data-state="" data-index="0" onclick="setJoker(this)"></button>
             </section>
 
             <section class="multipliers">
@@ -91,40 +94,40 @@
             </section>
 
             <section class="grid blue">
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="1" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="2" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="3" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="4" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="5" data-index="0" onclick="selectPrediction(this)"></button>
             </section>
             <section class="grid green">
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="1" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="2" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="3" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="4" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="5" data-index="0" onclick="selectPrediction(this)"></button>
             </section>
             <section class="grid yellow">
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="1" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="2" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="3" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="4" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="5" data-index="0" onclick="selectPrediction(this)"></button>
             </section>
             <section class="grid red">
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
-                <button data-state="" data-index="0" onclick="changeState(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="1" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="2" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="3" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="4" data-index="0" onclick="selectPrediction(this)"></button>
+                <button class="btn" data-state="" data-value="0" data-multiplier="5" data-index="0" onclick="selectPrediction(this)"></button>
             </section>
 
             <section class="controls">
-                <button data-index="8" onload="setContent(this)"></button>
-                <button data-index="1" onload="setContent(this)"></button>
-                <button data-index="2" onload="setContent(this)"></button>
-                <button data-index="3" onload="setContent(this)"></button>
-                <button data-index="4" onload="setContent(this)"></button>
+                <button data-index="8" onclick="setNumber(8)"></button>
+                <button data-index="1" onclick="setNumber(1)"></button>
+                <button data-index="2" onclick="setNumber(2)"></button>
+                <button data-index="3" onclick="setNumber(3)"></button>
+                <button data-index="4" onclick="setNumber(4)"></button>
             </section>
         </div>
 
