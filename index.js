@@ -1,12 +1,9 @@
-let crosses = 0;
-let checkmarks
-let svgCross = `
+const svgCross = `
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 486.5 486.5" >
 <line class="st0" x1="25" y1="25" x2="461.5" y2="461.5"/>
 <line class="st0" x1="461.5" y1="25" x2="25" y2="461.5"/>
 </svg>
 `
-
 const states = {
     0: '',
     1: 'selected',
@@ -32,8 +29,10 @@ const content = [
     `<path d="M40,310c0-61,49.25-110.51,110-110.51S260,249,260,310v51.49c0,61-49.25,110.51-110,110.51S40,422.52,40,361.49V151C40,90,89.25,40.49,150,40.49S260,90,260,151" />`,
     //number Seven
     `<path d="M122,472,260,40H40l36,99" />`,
-
 ]
+
+let crosses = 0;
+let checkmarks
 function setCheckmarks(x) {
     x = x > 12 ? 12 : x;
     checkmarks = document.querySelector('.orbs').querySelectorAll('circle')
