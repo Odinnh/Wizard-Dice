@@ -21,14 +21,15 @@
 body{
     display:flex;
     flex-direction: row;
-    align-items: top;
+    align-items: center;
     justify-content: center;
     color:var(--grey-900);
     background-color: var(--grey-300);
     padding-top:20px;
     gap:var(--gap);
-    width:100vw;
-    height:100vh;
+    width:min(100vw, 800px);
+    height:min(100vw, 800px);
+    margin:auto;
 }
 main{
 
@@ -45,6 +46,9 @@ input[type="text"]:-internal-autofill-selected
     border-radius: 2px;
     padding:5px 15px;
     width:100%;
+    height: 10vw;
+    max-height: 80px;
+    font-size: min(6vw, 60px);
 }
 
 aside{
@@ -52,19 +56,22 @@ aside{
     display: flex;
     gap:var(--gap);
     flex-direction: column;
+    align-items: center;
 }
 
 
 aside > svg{
+    flex-shrink: 0;
     width: 10vw;
     max-width: 80px;
     height: 10vw;
     max-height: 80px;
     justify-content: center;
     align-items: center;
+    
 }
 aside .score{
-    font-size: 2em;
+    font-size: 2em;;
 }
 
 #container{
@@ -74,6 +81,12 @@ aside .score{
     gap:var(--gap);
     color: white;
 }
+h2{
+    font-family: sans-serif;
+    font-size: min(8vw, 60px);
+    line-height: min(10vw, 80px);
+    text-align: center;
+}
 #container > section{
     display: flex;
     justify-content: space-around;
@@ -82,10 +95,17 @@ aside .score{
     max-height: 80px;
     align-items: center;
     gap:var(--gap);
+    justify-content: center;
 }
 .multipliers{
     height:6vw!important;
     max-height: 60px!important;
+}
+.multipliers h2{
+    width: 10vw;
+    max-width: 80px;
+    height: 10vw;
+    max-height: 80px;
 }
 
 svg.grey path{fill: var(--grey-200);}
@@ -157,4 +177,4 @@ button[data-state="collected"],
 button[data-state="number"]{
     border-style: double;
 }
-.controls{}
+.controls{flex-wrap: wrap;}
