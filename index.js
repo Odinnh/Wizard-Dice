@@ -1,9 +1,4 @@
-const svgCross = `
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 486.5 486.5" >
-<line class="st0" x1="25" y1="25" x2="461.5" y2="461.5"/>
-<line class="st0" x1="461.5" y1="25" x2="25" y2="461.5"/>
-</svg>
-`
+
 const states = {
     0: '',
     1: 'selected',
@@ -29,7 +24,12 @@ const content = [
     `<path d="M40,310c0-61,49.25-110.51,110-110.51S260,249,260,310v51.49c0,61-49.25,110.51-110,110.51S40,422.52,40,361.49V151C40,90,89.25,40.49,150,40.49S260,90,260,151" />`,
     //number Seven
     `<path d="M122,472,260,40H40l36,99" />`,
+    //Cross
+    `<line class="st0" x1="25" y1="25" x2="461.5" y2="461.5"/>
+    <line class="st0" x1="461.5" y1="25" x2="25" y2="461.5"/>,`
 ]
+
+let SVGCross = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486.5 486.5">${content[8]}</svg>`;
 
 let crosses = 0;
 let checkmarks
@@ -46,14 +46,42 @@ function setCheckmarks(x) {
 function changeState(elem) {
     let curr = parseInt(elem.getAttribute('data-index'))
     curr += 1
-    elem.setAttribute('data-index', curr % 4)
-    elem.setAttribute('data-state', states[curr % 4])
+    let mod = 4
+    elem.setAttribute('data-index', curr % mod)
+    elem.setAttribute('data-state', states[curr % mod])
     elem.innerHTML=''
-    if (states[curr % 4] =='collected'){
-        elem.innerHTML = svgCross;
+    if (states[curr % mod] =='collected'){
+        elem.innerHTML = SVGCross;
     }
-    if (states[curr % 4 ]=='number'){
+    if (states[curr % mod ]=='number'){
             elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 512">${content[parseInt(prompt())]}</svg>`
     }
     setCheckmarks(document.querySelectorAll('[data-state="collected"]').length)
 }
+
+function setJoker(elem){
+    let curr = parseInt(elem.getAttribute('data-index'))
+    curr += 2
+    let mod = 4
+    elem.setAttribute('data-index', curr % mod)
+    elem.setAttribute('data-state', states[curr % mod])
+    
+    elem.innerHTML=''
+    if (states[curr % mod] =='collected'){
+        elem.innerHTML = SVGCross
+    }
+    setCheckmarks(document.querySelectorAll('[data-state="collected"]').length)
+    setPredictionToZero(document.querySelector('[data-state="selected"]'))
+
+}
+
+function setPredictionToZero(elem){
+    elem.setAttribute('data-index', 3)
+    elem.setAttribute('data-state', states[3])
+    elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 512">${content[0]}</svg>`
+}
+function setContent(elem){
+    elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${parseInt(elem.getAttribute('data-index')) == 8?'486.5 486.5':'300 512'}">${content[parseInt(elem.getAttribute('data-index'))]}</svg>`
+}
+function start(){
+document.getElementsByClassName('controls')[0].querySelectorAll('button').forEach(item => setContent(item))}
