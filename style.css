@@ -172,9 +172,10 @@ color: var(--grey-500);
 ::-ms-input-placeholder { /* Microsoft Edge */
 color: var(--grey-500);
 }
-button[data-state="selected"], 
-button[data-state="collected"],
-button[data-state="number"]{
+
+button[data-state="selected"]
+{
     border-style: double;
+    border-width: min(20px, 3vw);
 }
 .controls{flex-wrap: wrap;}
