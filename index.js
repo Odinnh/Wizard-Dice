@@ -26,7 +26,11 @@ const content = {
     7: `<path d="M122,472,260,40H40l36,99" />`,
     //Cross
     8: `<line class="st0" x1="25" y1="25" x2="461.5" y2="461.5"/>
-    <line class="st0" x1="461.5" y1="25" x2="25" y2="461.5"/>,`
+    <line class="st0" x1="461.5" y1="25" x2="25" y2="461.5"/>`,
+    //Score Chest
+    9: `<path d="M448 32H128C57.31 32 0 89.31 0 160v288c0 17.67 14.33 32 32 32h512c17.67 0 32-14.33 32-32V160c0-70.69-57.31-128-128-128zM96 432H48V288h48v144zm0-192H48v-80c0-32.72 19.8-60.84 48-73.22V240zm336 192H144V288h80v48c0 8.84 7.16 16 16 16h96c8.84 0 16-7.16 16-16v-48h80v144zM272 288v-32c0-8.84 7.16-16 16-16s16 7.16 16 16v32c0 8.84-7.16 16-16 16s-16-7.16-16-16zm160-48h-80v-32c0-8.84-7.16-16-16-16h-96c-8.84 0-16 7.16-16 16v32h-80V80h288v160zm96 192h-48V288h48v144zm0-192h-48V86.78c28.2 12.38 48 40.5 48 73.22v80z" class=""></path>`,
+    //Reset icon
+    10: `<path d="M255.545 8c-66.269.119-126.438 26.233-170.86 68.685L48.971 40.971C33.851 25.851 8 36.559 8 57.941V192c0 13.255 10.745 24 24 24h134.059c21.382 0 32.09-25.851 16.971-40.971l-41.75-41.75c30.864-28.899 70.801-44.907 113.23-45.273 92.398-.798 170.283 73.977 169.484 169.442C423.236 348.009 349.816 424 256 424c-41.127 0-79.997-14.678-110.63-41.556-4.743-4.161-11.906-3.908-16.368.553L89.34 422.659c-4.872 4.872-4.631 12.815.482 17.433C133.798 479.813 192.074 504 256 504c136.966 0 247.999-111.033 248-247.998C504.001 119.193 392.354 7.755 255.545 8z" class=""></path>`,
 }
 
 
@@ -91,18 +95,30 @@ function setPredictionToNumber(elem, value = '') {
     elem.setAttribute('data-state', state)
     elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${elem.getAttribute('data-index') == '8' ? '486.5 486.5' : '300 512'}">${content[value]}</svg>`
     setTotal()
-    
+
 }
 function setTotal() {
     let total = 0
-    document.querySelectorAll('[data-state="collected"]')?.length >= 9? total = 3: total = 0;
+    document.querySelectorAll('[data-state="collected"]')?.length >= 9 ? total = 3 : total = 0;
     document.querySelectorAll('[data-value]').forEach(item => {
         total += parseInt(item.getAttribute('data-value'))
     })
-    document.querySelector('aside').querySelector('.score').innerHTML = '<h2>'+ total + '</h2?'
+    document.querySelector('aside').querySelector('.score').innerHTML = '<h2>' + total + '</h2?'
 }
 function setContent(elem) {
-    elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${elem.getAttribute('data-index') == '8' ? '486.5 486.5' : '300 512'}">${content[elem.getAttribute('data-index')]}</svg>`
+    let size = '300 512'
+if (elem.getAttribute('data-index') == '8'){
+    size = '486.5 486.5'
+}else if (elem.getAttribute('data-index') == '9'){
+    size = '576 512'
+    elem.classList.add('chest')
+}else if (elem.getAttribute('data-index') == '10'){
+    size = '512 512'
+    elem.classList.add('reset')
+
+}
+
+    elem.innerHTML = `<svg id="number-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size}">${content[elem.getAttribute('data-index')]}</svg>`
 }
 function start() {
     document.getElementsByClassName('controls')[0].querySelectorAll('button').forEach(item => setContent(item))
@@ -116,5 +132,20 @@ function start() {
             setCheckmarks(document.querySelectorAll('[data-state="collected"]').length)
             setTotal()
         });
+    })
+}
+
+
+function hideScore() {
+    document.querySelector('aside').querySelector('.score').classList.toggle('-hidden');
+}
+function resetBoard() {
+    document.querySelectorAll('.btn').forEach(item => {
+            item.setAttribute('data-index', 0)
+            item.setAttribute('data-value', 0)
+            item.setAttribute('data-state', '')
+            item.innerHTML = ''
+            setCheckmarks(document.querySelectorAll('[data-state="collected"]').length)
+            setTotal()
     })
 }
