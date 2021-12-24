@@ -170,7 +170,7 @@ button {
 	aspect-ratio: 1;
 	border-style: inset;
 	color: var(--color);
-	border: min(10px, 1.5vw) solid var(--color);
+	border: min(10px, 1.5vw) solid var(--grey-100);
 	border-radius: min(20px, 3vw);
 	stroke: var(--color);
 	fill: none;
