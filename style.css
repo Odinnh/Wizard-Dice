@@ -5,11 +5,16 @@
 	--grey-500: #1e1e1e;
 	--grey-900: #0a0a0a;
 
-	--blue-500: #3450f0;
-	--green-500: #25b62c;
-	--yellow-500: #d7d237;
-	--red-500: #f03434;
+	--blue-400: #3450f0;
+	--green-400: #25b62c;
+	--yellow-400: #d7d237;
+	--red-400: #f03434;
 	--purple-500: #7044e9;
+	
+	--yellow-500:#d7bb51;
+	--green-500:#5b9d2e;
+	--blue-500:#5266db;
+	--red-500:#ec3a3a;
     
 	--gap: 10px;
 }
