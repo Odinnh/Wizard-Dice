@@ -67,7 +67,7 @@ function renderBoard() {
     })
 
     document.querySelectorAll('[data-state="collected"]').forEach((item, index) => {
-        if (index >= 8){
+        if (index >= 8) {
             total = 3
         }
         document.querySelector('.orbs').querySelectorAll('circle')[index]?.classList.add('checked')
@@ -134,7 +134,9 @@ function changeState(item) {
             if (element.getAttribute(_role) != 'control') {
                 element.setAttribute(_state, '')
                 element.setAttribute(_index, '')
-                element.setAttribute(_link, '')
+                if (element.getAttribute(_role) != 'joker') {
+                    element.setAttribute(_link, '')
+                }
             }
         })
     }
