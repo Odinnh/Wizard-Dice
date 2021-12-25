@@ -36,7 +36,9 @@ function start() {
 
         item.addEventListener('dblclick', (e) => {
             e.preventDefault();
+            
             if (item.getAttribute(_role) == 'control') { return }
+
             if (item.getAttribute(_role) == 'joker') {
                 document.querySelectorAll(`[data-link="${item.getAttribute(_link)}"]`)[1]?.setAttribute(_state, '')
                 document.querySelectorAll(`[data-link="${item.getAttribute(_link)}"]`)[1]?.setAttribute(_index, '')
@@ -47,8 +49,10 @@ function start() {
                 document.querySelectorAll(`[data-link="${item.getAttribute(_link)}"]`)[0]?.setAttribute(_index, '')
                 item.setAttribute(_link, '')
             }
+
             item.setAttribute(_state, '')
             item.setAttribute(_index, '')
+
             renderBoard()
         });
     })
@@ -98,9 +102,9 @@ function changeState(item) {
     }
     if (document.querySelectorAll('[data-state="selected"]').length != 0 && role != 'number') {
         //set selected tile to 0 and mark joker
+        state = 'marked'
         if (role == 'joker' && state != 'collected') {
             index = 0
-            state = 'marked'
             console.log(link)
             selected.setAttribute(_link, link)
             item.setAttribute(_index, 8)
@@ -111,7 +115,6 @@ function changeState(item) {
 
         //set selected tile to controller value
         if (role == 'control' && index <= 8) {
-            state = 'marked'
             if (index == 8) {
                 state = 'collected'
             }
@@ -134,6 +137,7 @@ function changeState(item) {
             if (element.getAttribute(_role) != 'control') {
                 element.setAttribute(_state, '')
                 element.setAttribute(_index, '')
+
                 if (element.getAttribute(_role) != 'joker') {
                     element.setAttribute(_link, '')
                 }
