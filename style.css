@@ -221,7 +221,11 @@ button[data-state="selected"] {
 .-hidden{
     color:rgba(255, 255, 255, 0);
 }
-.chest > svg, .reset > svg{
+[data-index="9"] > svg, [data-index="10"] > svg{
     fill:white;
     stroke:none;
+}
+
+svg{
+	pointer-events: none; 
 }
