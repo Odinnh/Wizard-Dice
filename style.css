@@ -1,4 +1,7 @@
 :root {
+	/* asdasdasdasdasdasdasdasdasd */
+
+	/* important change */
 	--grey-100: #909090;
 	--grey-200: #444444;
 	--grey-300: #252526;
@@ -98,7 +101,7 @@ h2 {
 	max-height: 100px;
 	align-items: center;
 	gap: var(--gap);
-	justify-content: center;
+	justify-content: space-around;
 }
 .multipliers {
 	height: 10vw !important;
